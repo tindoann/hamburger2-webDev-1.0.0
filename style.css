@@ -1,0 +1,83 @@
+body {
+  font-size: 18px;
+  font-family: sans-serif;
+  background: #F1C93C;
+}
+
+#nav-toggle {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+#nav-toggle:checked + .menu {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* hamburger menu */
+
+#nav-toggle-label {
+  position: fixed;
+  right: 1em;
+  top: 1em;
+  z-index: 2;
+  cursor: pointer;
+}
+#nav-toggle-label span, #nav-toggle-label:before, #nav-toggle-label:after {
+  display: block;
+  height: 3px;
+  background: black;
+  width: 2em;
+  margin-bottom: .4em;
+  transition: .2s all linear;
+}
+#nav-toggle-label:before, #nav-toggle-label:after {
+  content: "";
+}
+
+.menu {
+  font-size: 24px;
+  visibility: hidden;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 0;
+  padding: 2em;
+  position: fixed;
+  list-style: none;
+  padding-left: 0;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  transition: .2s all linear;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.menu li {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 1.5em;
+}
+.menu li a {
+  text-decoration: none;
+  border-bottom: 2px solid black;
+  color: black;
+}
+
+.nav-toggle-label--active span {
+  opacity: 0;
+}
+.nav-toggle-label--active:before {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  position: absolute;
+  top: 50%;
+}
+.nav-toggle-label--active:after {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+}
